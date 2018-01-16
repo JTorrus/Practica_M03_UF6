@@ -4,13 +4,13 @@ import java.sql.Date;
 
 public class Bill {
     private int billId;
-    private int orderId;
+    private ProductOrder productOrder;
     private Date date;
     private float finalPrice;
 
-    public Bill(int billId, int orderId, Date date, float finalPrice) {
+    public Bill(int billId, ProductOrder productOrder, Date date, float finalPrice) {
         this.billId = billId;
-        this.orderId = orderId;
+        this.productOrder = productOrder;
         this.date = date;
         this.finalPrice = finalPrice;
     }

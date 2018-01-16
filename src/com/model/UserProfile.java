@@ -1,6 +1,6 @@
 package com.model;
 
-public class UserData {
+public class UserProfile {
     private int userId;
     private String city;
     private String postalCode;
