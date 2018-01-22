@@ -1,10 +1,17 @@
 package com.main;
 
+import com.dao.UserDAOJDBCImpl;
+import com.jdbc_utilities.DBConnection;
+import com.model.User;
+import com.model.UserData;
+
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
+        showWelcomeMenu();
     }
 
     //Master Menu
@@ -63,7 +70,7 @@ public class Main {
         if (choice==1){
             showLoginMenu();
         }else if (choice==2){
-
+            showSignUpMenu();
         }
     }
 
@@ -78,23 +85,44 @@ public class Main {
         username = sc.nextLine();
         System.out.print("Enter your Password: ");
         password = sc.nextLine();
+        if (username.equals("root")&&password.equals("root")){
+            showMasterMenu();
+        }
     }
 
     //Signup Menu
     private static void showSignUpMenu(){
         Scanner sc = new Scanner(System.in);
-        String password;
-        String username;
-        String rPassword;
-        boolean admin;
-
+        String password, username, rPassword, city, zipCode,email;
+        float money=100f;
 
         System.out.print("Enter your Username: ");
         username = sc.nextLine();
+        System.out.print("Enter your city: ");
+        city = sc.nextLine();
+        System.out.print("Enter your zipCode: ");
+        zipCode = sc.nextLine();
+        System.out.print("Enter your email: ");
+        email = sc.nextLine();
         System.out.print("Enter your Password: ");
         password = sc.nextLine();
         System.out.print("Re-Enter your Password: ");
         rPassword = sc.nextLine();
+
+        if (password.equals(rPassword)){
+            UserDAOJDBCImpl userDAOJDBC = new UserDAOJDBCImpl();
+            UserData userData = new UserData(city,zipCode,email,money);
+            User user = new User(username,password, userData);
+            try {
+                userDAOJDBC.addUser(user, DBConnection.getInstance());
+                DBConnection.disconnect();
+            } catch (SQLException e) {
+                System.out.println("Database Error::"+e.getMessage());
+            }
+            System.out.println("User created successfully!!");
+        }else{
+            System.out.println("The passwords that you've entered doesn't match");
+        }
 
     }
 }

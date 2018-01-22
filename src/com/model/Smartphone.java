@@ -2,7 +2,6 @@ package com.model;
 
 public class Smartphone {
 
-    private int smartphoneId;
     private String operatingSystem;
     private int storage;
     private boolean free;

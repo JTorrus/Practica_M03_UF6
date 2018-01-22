@@ -1,7 +1,6 @@
 package com.model;
 
 public class Product {
-    private int productId;
     private String productName;
     private String tag;
     private float price;

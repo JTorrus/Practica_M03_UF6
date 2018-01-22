@@ -1,7 +1,6 @@
 package com.model;
 
 public class Audio extends Product{
-    private int headphonesId;
     private String type;
     private int frequency;
     private boolean wireless;
