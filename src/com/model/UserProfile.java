@@ -5,9 +5,9 @@ public class UserProfile {
     private String city;
     private String postalCode;
     private String email;
-    private float money;
+    private Double money;
 
-    public UserProfile(int profileId, String city, String postalCode, String email, float money) {
+    public UserProfile(int profileId, String city, String postalCode, String email, Double money) {
         this.profileId = profileId;
         this.city = city;
         this.postalCode = postalCode;
@@ -47,11 +47,11 @@ public class UserProfile {
         this.email = email;
     }
 
-    public float getMoney() {
+    public Double getMoney() {
         return money;
     }
 
-    public void setMoney(float money) {
+    public void setMoney(Double money) {
         this.money = money;
     }
 }

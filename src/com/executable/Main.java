@@ -1,6 +1,6 @@
-package com.main;
+package com.executable;
 
-import com.dao.UserDAOJDBCImpl;
+import com.dao.factories.UserDAOFactory;
 import com.jdbc_utilities.DBConnection;
 import com.model.UserSignIn;
 import com.model.UserProfile;
@@ -40,7 +40,7 @@ public class Main {
 
         System.out.println("a.Buy product");
         System.out.println("b.List products");
-        System.out.println("c.Search");
+        System.out.println("c.Search a product");
         System.out.println("d.List my bills");
         System.out.println("e.Show my wallet");
         System.out.println("f.Add money");
@@ -93,7 +93,7 @@ public class Main {
     private static void showSignUpMenu(){
         Scanner sc = new Scanner(System.in);
         String password, username, rPassword, city, zipCode,email;
-        float money=100f;
+        Double money = 100.0;
 
         System.out.print("Enter your Username: ");
         username = sc.nextLine();
@@ -109,11 +109,12 @@ public class Main {
         rPassword = sc.nextLine();
 
         if (password.equals(rPassword)){
-            UserDAOJDBCImpl userDAOJDBC = new UserDAOJDBCImpl();
+            UserDAOFactory userDAOFactory = new UserDAOFactory();
+
             UserProfile userProfile = new UserProfile(city,zipCode,email,money);
             UserSignIn userSignIn = new UserSignIn(username,password, userProfile);
             try {
-                userDAOJDBC.addUser(userSignIn, DBConnection.getInstance());
+                userDAOFactory.createUserDAO();
                 DBConnection.disconnect();
             } catch (SQLException e) {
                 System.out.println("Database Error::"+e.getMessage());

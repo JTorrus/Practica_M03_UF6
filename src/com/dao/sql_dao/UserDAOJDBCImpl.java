@@ -1,17 +1,18 @@
-package com.dao;
+package com.dao.sql_dao;
 
+import com.dao.UserDAO;
+import com.model.UserProfile;
 import com.model.UserSignIn;
 
 import java.sql.*;
 
-public class UserDAOJDBCImpl implements UserDAO{
+public class UserDAOJDBCImpl implements UserDAO {
     private final String QUERY_ADD_USERDATA = "INSERT INTO usersignin(username, pass) VALUES(?, ?)";
     private final String QUERY_ADD_USERPROFILE = "INSERT INTO userprofile(location, zipcode, email, funds) VALUES(?, ?, ?, ?)";
     private final String QUERY_REMOVE_USERPROFILE = "DELETE FROM userprofile WHERE profile_id = ?";
-    private final String QUERY_GET_ID_FROM_USER = "SELECT"
 
     @Override
-    public void addUser(UserSignIn userSignIn, Connection connection) {
+    public void add(UserSignIn userSignIn, Connection connection) {
         try (PreparedStatement preparedStatement = connection.prepareStatement(QUERY_ADD_USERDATA)){
 
             preparedStatement.setString(1, userSignIn.getUsername());
@@ -27,17 +28,13 @@ public class UserDAOJDBCImpl implements UserDAO{
     }
 
     @Override
-    public void removeUser(UserSignIn userSignIn, Connection connection) {
+    public void remove(UserSignIn userSignIn, Connection connection) {
         try (PreparedStatement preparedStatement = connection.prepareStatement(QUERY_REMOVE_USERPROFILE)){
-            preparedStatement.setString(1, userSignIn.);
+            preparedStatement.setString(1, "abc");
         }catch (SQLException e){
             System.out.println("Database error");
         }
     }
 
-    public int getIdFromUser(UserSignIn userSignIn, Connection connection) {
-        try (Statement statement = connection.createStatement()) {
-
-        }
-    }
+    //TODO PASAR UN ID DE PERFIL MEDIANTE EL SIGNIN (NECESITAMOS ELIMINAR EL ID DE USERPROFILE PARA QUE FUNCIONE EL ON CASCADE)
 }
