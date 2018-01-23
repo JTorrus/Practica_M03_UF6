@@ -1,6 +1,6 @@
 package com.model;
 
-public class UserSignIn {
+public abstract class UserSignIn {
     private int userId;
     private int profileId;
     private String username;

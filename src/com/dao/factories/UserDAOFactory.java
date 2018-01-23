@@ -1,10 +1,10 @@
 package com.dao.factories;
 
-import com.dao.UserDAO;
-import com.dao.sql_dao.UserDAOJDBCImpl;
+import com.dao.CustomerDAO;
+import com.dao.sql_dao.CustomerDAOJDBCImpl;
 
 public class UserDAOFactory {
-    public UserDAO createUserDAO() {
-        return new UserDAOJDBCImpl();
+    public CustomerDAO createUserDAO() {
+        return new CustomerDAOJDBCImpl();
     }
 }
