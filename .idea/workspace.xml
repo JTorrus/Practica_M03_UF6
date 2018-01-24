@@ -2,26 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="878e5844-28d6-410d-be46-e5e2f4605ae7" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/dao/MasterDAO.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/dao/sql_dao/MasterDAOJDBCImpl.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/model/Customer.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/model/Master.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_45_bin.xml" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/dao/UserSigninDAO.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/com/dao/sql_dao/UserSigninDAOJDBCImpl.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/GearWorst.iml" afterPath="$PROJECT_DIR$/GearWorst.iml" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/BillDAO.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/DAO.java" afterPath="$PROJECT_DIR$/src/com/dao/DAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/ProductDAO.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/UserDAO.java" afterPath="$PROJECT_DIR$/src/com/dao/CustomerDAO.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/factories/ProductDAOFactory.java" afterPath="$PROJECT_DIR$/src/com/dao/factories/ProductDAOFactory.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/factories/UserDAOFactory.java" afterPath="$PROJECT_DIR$/src/com/dao/factories/UserDAOFactory.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/sql_dao/BillDAOJDBCImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/sql_dao/ProductDAOJDBCImpl.java" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/com/dao/sql_dao/UserDAOJDBCImpl.java" afterPath="$PROJECT_DIR$/src/com/dao/sql_dao/CustomerDAOJDBCImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/dao/MasterDAO.java" afterPath="$PROJECT_DIR$/src/com/dao/MasterDAO.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/dao/sql_dao/CustomerDAOJDBCImpl.java" afterPath="$PROJECT_DIR$/src/com/dao/sql_dao/CustomerDAOJDBCImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/com/dao/sql_dao/MasterDAOJDBCImpl.java" afterPath="$PROJECT_DIR$/src/com/dao/sql_dao/MasterDAOJDBCImpl.java" />
       <change beforePath="$PROJECT_DIR$/src/com/executable/Main.java" afterPath="$PROJECT_DIR$/src/com/executable/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/com/model/UserSignIn.java" afterPath="$PROJECT_DIR$/src/com/model/UserSignIn.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -45,25 +32,49 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DAO.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/dao/DAO.java">
+      <file leaf-file-name="CustomerDAOJDBCImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dao/sql_dao/CustomerDAOJDBCImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+            <state relative-caret-position="225">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerDAOJDBCImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dao/sql_dao/CustomerDAOJDBCImpl.java">
+      <file leaf-file-name="UserSigninDAOJDBCImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/dao/sql_dao/UserSigninDAOJDBCImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1150">
-              <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
+            <state relative-caret-position="1019">
+              <caret line="43" column="83" lean-forward="false" selection-start-line="43" selection-start-column="83" selection-end-line="43" selection-end-column="83" />
               <folding>
-                <marker date="1516704692403" expanded="true" signature="209:260" ph="INSERT INTO usersignin... " />
-                <marker date="1516704692403" expanded="true" signature="444:488" ph="DELETE FROM userprofile... " />
+                <element signature="imports" expanded="true" />
+                <marker date="1516756523340" expanded="true" signature="316:367" ph="INSERT INTO usersignin... " />
+                <marker date="1516756523340" expanded="true" signature="551:595" ph="DELETE FROM userprofile... " />
+                <marker date="1516756523340" expanded="true" signature="645:684" ph="SELECT max(p... userprofile" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserSigninDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dao/UserSigninDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/dao/DAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -71,8 +82,18 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/executable/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="23" column="43" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="43" />
+            <state relative-caret-position="794">
+              <caret line="113" column="54" lean-forward="false" selection-start-line="113" selection-start-column="54" selection-end-line="113" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserProfile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/model/UserProfile.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -98,44 +119,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MasterDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/dao/MasterDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="MasterDAOJDBCImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/dao/sql_dao/MasterDAOJDBCImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
+            <state relative-caret-position="800">
+              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Master.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/model/Master.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserSignIn.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/model/UserSignIn.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="15" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -146,6 +137,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -186,13 +178,16 @@
         <option value="$PROJECT_DIR$/src/com/dao/sql_dao/UserProfileDAOJDBImpl.java" />
         <option value="$PROJECT_DIR$/src/com/dao/UserDAO.java" />
         <option value="$PROJECT_DIR$/src/com/dao/sql_dao/UserDAOJDBCImpl.java" />
-        <option value="$PROJECT_DIR$/src/com/executable/Main.java" />
         <option value="$PROJECT_DIR$/src/com/model/Customer.java" />
         <option value="$PROJECT_DIR$/src/com/model/Master.java" />
         <option value="$PROJECT_DIR$/src/com/model/UserSignIn.java" />
-        <option value="$PROJECT_DIR$/src/com/dao/DAO.java" />
-        <option value="$PROJECT_DIR$/src/com/dao/MasterDAO.java" />
         <option value="$PROJECT_DIR$/src/com/dao/sql_dao/MasterDAOJDBCImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/dao/MasterDAO.java" />
+        <option value="$PROJECT_DIR$/src/com/dao/DAO.java" />
+        <option value="$PROJECT_DIR$/src/com/dao/sql_dao/CustomerDAOJDBCImpl.java" />
+        <option value="$PROJECT_DIR$/src/com/executable/Main.java" />
+        <option value="$PROJECT_DIR$/src/com/dao/UserSigninDAO.java" />
+        <option value="$PROJECT_DIR$/src/com/dao/sql_dao/UserSigninDAOJDBCImpl.java" />
       </list>
     </option>
   </component>
@@ -436,7 +431,7 @@
       <workItem from="1516212781761" duration="2025000" />
       <workItem from="1516284090008" duration="3961000" />
       <workItem from="1516293937049" duration="50000" />
-      <workItem from="1516660623373" duration="5633000" />
+      <workItem from="1516660623373" duration="8379000" />
     </task>
     <task id="LOCAL-00001" summary="Models added and DBConnector WIP">
       <created>1516115747416</created>
@@ -459,11 +454,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516293984755</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Modified DAO packages">
+      <created>1516749865728</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1516749865729</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20406000" />
+    <option name="totallyTimeSpent" value="23152000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-11" y="-11" width="3862" height="2122" extended-state="6" />
@@ -508,23 +510,14 @@
     <MESSAGE value="Models added and DBConnector WIP" />
     <MESSAGE value="Classes's names has benn modified to match database table's names" />
     <MESSAGE value="Added some methods to main class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added some methods to main class" />
+    <MESSAGE value="Modified DAO packages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modified DAO packages" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/jdbc_utilities/DBConnection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="23" column="17" lean-forward="false" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/model/Audio.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -677,7 +670,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/jdbc_utilities/DBUtilities.java" />
-    <entry file="file://$PROJECT_DIR$/src/com/model/UserProfile.java" />
     <entry file="file://$PROJECT_DIR$/src/com/model/Product.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -767,14 +759,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dao/CustomerDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="9" column="60" lean-forward="false" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dao/sql_dao/ProductDAOJDBCImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="250">
@@ -791,18 +775,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/model/Master.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="0" lean-forward="false" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/model/UserSignIn.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="50">
           <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/model/Master.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="9" column="0" lean-forward="true" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dao/sql_dao/MasterDAOJDBCImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dao/MasterDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="9" column="19" lean-forward="false" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/model/Customer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dao/CustomerDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="9" column="60" lean-forward="false" selection-start-line="9" selection-start-column="60" selection-end-line="9" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/dao/DAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="48" lean-forward="false" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
           <folding />
         </state>
       </provider>
@@ -819,54 +845,48 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/dao/sql_dao/CustomerDAOJDBCImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1150">
-          <caret line="49" column="0" lean-forward="false" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-          <folding>
-            <marker date="1516704692403" expanded="true" signature="209:260" ph="INSERT INTO usersignin... " />
-            <marker date="1516704692403" expanded="true" signature="444:488" ph="DELETE FROM userprofile... " />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/model/UserProfile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/executable/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="23" column="43" lean-forward="false" selection-start-line="23" selection-start-column="35" selection-end-line="23" selection-end-column="43" />
+        <state relative-caret-position="794">
+          <caret line="113" column="54" lean-forward="false" selection-start-line="113" selection-start-column="54" selection-end-line="113" selection-end-column="54" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/model/Customer.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dao/UserSigninDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dao/sql_dao/MasterDAOJDBCImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="4" lean-forward="false" selection-start-line="15" selection-start-column="4" selection-end-line="18" selection-end-column="5" />
+        <state relative-caret-position="225">
+          <caret line="9" column="46" lean-forward="false" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dao/MasterDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/com/dao/sql_dao/UserSigninDAOJDBCImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/dao/DAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="7" column="48" lean-forward="true" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-          <folding />
+        <state relative-caret-position="1019">
+          <caret line="43" column="83" lean-forward="false" selection-start-line="43" selection-start-column="83" selection-end-line="43" selection-end-column="83" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1516756523340" expanded="true" signature="316:367" ph="INSERT INTO usersignin... " />
+            <marker date="1516756523340" expanded="true" signature="551:595" ph="DELETE FROM userprofile... " />
+            <marker date="1516756523340" expanded="true" signature="645:684" ph="SELECT max(p... userprofile" />
+          </folding>
         </state>
       </provider>
     </entry>

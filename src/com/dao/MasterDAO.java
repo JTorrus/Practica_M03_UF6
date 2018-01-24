@@ -7,5 +7,5 @@ import com.model.UserSignIn;
 import java.sql.Connection;
 
 public interface MasterDAO extends DAO<Master> {
-    void add(Product prod, Connection connection);
+    void addProduct(Product prod, Connection connection);
 }

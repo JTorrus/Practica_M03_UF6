@@ -9,7 +9,7 @@ import java.sql.Connection;
 public class MasterDAOJDBCImpl implements MasterDAO {
 
     @Override
-    public void add(Product prod, Connection connection) {
+    public void addProduct(Product prod, Connection connection) {
 
     }
 
@@ -25,6 +25,11 @@ public class MasterDAOJDBCImpl implements MasterDAO {
 
     @Override
     public void showOne(Master type, Connection connection) {
+
+    }
+
+    @Override
+    public void register(Master type, Connection connection) {
 
     }
 }
