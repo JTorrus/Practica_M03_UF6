@@ -3,10 +3,7 @@ package com.dao.sql_dao;
 import com.dao.UserSigninDAO;
 import com.model.UserSignIn;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class UserSigninDAOJDBCImpl implements UserSigninDAO {
     private final String QUERY_ADD_USERDATA = "INSERT INTO usersignin(username, pass) VALUES(?, ?)";
@@ -41,8 +38,28 @@ public class UserSigninDAOJDBCImpl implements UserSigninDAO {
 
     @Override
     public int getLastUserID(Connection connection) {
-        try (Statement statement = connection.createStatement(QUERY_GET_HIGER_ID)){
-        }catch (SQLException e){}
+        int id = -1;
+
+        try (Statement statement = connection.createStatement();
+             ResultSet resultSet = statement.executeQuery(QUERY_GET_HIGER_ID)) {
+            while (resultSet.next()) {
+                id = resultSet.getInt(1) + 1;
+            }
+        } catch (SQLException e) {
+            System.err.println("Database error");
+        }
+
+        return id;
+    }
+
+    @Override
+    public void checkMyWallet(UserSignIn us, Connection connection) {
+
+    }
+
+    @Override
+    public void checkMyBills(UserSignIn us, Connection connection) {
+
     }
 
 }

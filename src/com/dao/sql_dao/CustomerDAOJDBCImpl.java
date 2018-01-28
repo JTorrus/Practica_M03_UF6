@@ -1,6 +1,5 @@
 package com.dao.sql_dao;
 
-import com.dao.CustomerDAO;
 import com.model.UserSignIn;
 
 import java.sql.*;
