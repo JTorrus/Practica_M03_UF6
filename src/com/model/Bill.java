@@ -46,4 +46,14 @@ public class Bill {
     public void setFinalPrice(Double finalPrice) {
         this.finalPrice = finalPrice;
     }
+
+    @Override
+    public String toString() {
+        return "Bill{" +
+                "billId=" + billId +
+                ", orderId=" + orderId +
+                ", billDate=" + billDate +
+                ", finalPrice=" + finalPrice +
+                '}';
+    }
 }

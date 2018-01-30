@@ -85,13 +85,8 @@ public class Main {
 
         if (password.equals(rPassword)){
             UserProfile userProfile = new UserProfile(city,zipCode,email,money);
-            UserSignIn userSignIn = new UserSignIn(username,password, userProfile);
-            try {
-                userDAOFactory.createUserDAO();
-                DBConnection.disconnect();
-            } catch (SQLException e) {
-                System.out.println("Database Error::"+e.getMessage());
-            }
+//            UserSignIn userSignIn = new UserSignIn(username,password, userProfile);
+            DBConnection.disconnect();
             System.out.println("UserSignIn created successfully!!");
         }else{
             System.out.println("The passwords that you've entered doesn't match");

@@ -6,8 +6,7 @@ public class UserSignIn {
     private String username;
     private String password;
 
-    public UserSignIn(int userId, int profileId, String username, String password) {
-        this.userId = userId;
+    public UserSignIn(int profileId, String username, String password) {
         this.profileId = profileId;
         this.username = username;
         this.password = password;

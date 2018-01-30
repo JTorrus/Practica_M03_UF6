@@ -7,8 +7,7 @@ public class UserProfile {
     private String email;
     private Double money;
 
-    public UserProfile(int profileId, String city, String postalCode, String email, Double money) {
-        this.profileId = profileId;
+    public UserProfile(String city, String postalCode, String email, Double money) {
         this.city = city;
         this.postalCode = postalCode;
         this.email = email;
