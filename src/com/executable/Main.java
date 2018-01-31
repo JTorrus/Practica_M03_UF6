@@ -1,5 +1,6 @@
 package com.executable;
 
+import com.controller.DBController;
 import com.jdbc_utilities.DBConnection;
 import com.model.UserSignIn;
 import com.model.UserProfile;
@@ -8,12 +9,15 @@ import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Main {
+
+    private static DBController controller = new DBController();
+
     public static void main(String[] args) {
         showWelcomeMenu();
     }
 
     //Customer Menu
-    private static void showCustomerMenu(){
+    private static void showCustomerMenu() {
         Scanner sc = new Scanner(System.in);
         char choice;
 
@@ -29,12 +33,12 @@ public class Main {
         do {
             System.out.println("Choose an option: ");
             choice = sc.nextLine().charAt(0);
-        }while (choice!='q' || choice!='Q');
+        } while (choice != 'q' || choice != 'Q');
     }
 
 
     //Welcome Menu
-    private static void showWelcomeMenu(){
+    private static void showWelcomeMenu() {
         Scanner sc = new Scanner(System.in);
         int choice;
 
@@ -44,16 +48,27 @@ public class Main {
         System.out.println("2.Signup");
         choice = sc.nextInt();
 
-        if (choice==1){
+        if (choice == 1) {
             showLoginMenu();
-        }else if (choice==2){
+        } else if (choice == 2) {
             showSignUpMenu();
         }
     }
 
+    //List Products Menu
+    private static void listProductsMenu(){
+        Scanner sc = new Scanner(System.in);
+        int choice;
+        System.out.println("Please select one choice");
+        System.out.println("1. List Smartphones");
+        System.out.println("2. List Earphones/Headphones");
+        System.out.println("3. List All");
+        choice = sc.nextInt();
+    }
+
 
     //Login Menu
-    private static void showLoginMenu(){
+    private static void showLoginMenu() {
         Scanner sc = new Scanner(System.in);
         String password;
         String username;
@@ -62,12 +77,27 @@ public class Main {
         username = sc.nextLine();
         System.out.print("Enter your Password: ");
         password = sc.nextLine();
+
+        UserSignIn userSignIn = new UserSignIn(username, password);
+
+        try {
+            if (controller.checkUser(userSignIn, DBConnection.getInstance())) {
+                System.out.println("Welcome " + username);
+                showCustomerMenu();
+            }else{
+                System.out.println("Wrong usernmae or password");
+                showLoginMenu();
+            }
+        } catch (SQLException e) {
+            System.out.println("Database Error::"+e.getMessage());
+        }
+
     }
 
     //Signup Menu
-    private static void showSignUpMenu(){
+    private static void showSignUpMenu() {
         Scanner sc = new Scanner(System.in);
-        String password, username, rPassword, city, zipCode,email;
+        String password, username, rPassword, city, zipCode, email;
         Double money = 100.0;
 
         System.out.print("Enter your Username: ");
@@ -83,12 +113,19 @@ public class Main {
         System.out.print("Re-Enter your Password: ");
         rPassword = sc.nextLine();
 
-        if (password.equals(rPassword)){
-            UserProfile userProfile = new UserProfile(city,zipCode,email,money);
-//            UserSignIn userSignIn = new UserSignIn(username,password, userProfile);
+        if (password.equals(rPassword)) {
+            UserProfile userProfile = new UserProfile(city, zipCode, email, money);
+            UserSignIn userSignIn = new UserSignIn(username, password);
+            try {
+                controller.registerUer(userSignIn, userProfile, DBConnection.getInstance());
+                System.out.println("User created successfully!!");
+            } catch (SQLException e) {
+                System.out.println("Database Error::" + e.getMessage());
+            }
+
             DBConnection.disconnect();
-            System.out.println("UserSignIn created successfully!!");
-        }else{
+
+        } else {
             System.out.println("The passwords that you've entered doesn't match");
         }
 

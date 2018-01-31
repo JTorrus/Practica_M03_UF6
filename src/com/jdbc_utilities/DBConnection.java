@@ -14,7 +14,6 @@ public class DBConnection {
     public static Connection getInstance() throws SQLException{
         if (conn==null){
             conn = DriverManager.getConnection(DBUtilities.URL, DBUtilities.USERNAME, DBUtilities.PASSWORD);
-            System.out.println("Connected");
         }
         return conn;
     }

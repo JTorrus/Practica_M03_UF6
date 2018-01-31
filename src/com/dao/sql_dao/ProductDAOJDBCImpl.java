@@ -9,6 +9,8 @@ public class ProductDAOJDBCImpl implements ProductDAO {
 
     private final String REMOVE_PRODUCT = "DELETE FROM product WHERE product_id = ?";
     private final String QUERY_GET_ALL_PRODUCTS = "SELECT * FROM product";
+    private final String QUERY_GET_ALL_SMARTPHONES = "SELECT p.name, p.brand, s.os, s.internal_storage, s.color, s.is_unlocked, p.price, p.stock FROM product AS p, smartphone AS s WHERE s.smartphone_id = p.product_id";
+    private final String QUERY_GET_ALL_AUDIO = "SELECT p.name, p.brand, a.type, a.sound_mode, a.is_wireless, a.has_microphone, p.price, p.stock FROM product AS p, audio AS a WHERE a.audio_id = p.product_id";
     private final String QUERY_GET_ONE_PRODUCT = "SELECT * FROM product WHERE product_id = ?";
 
 
@@ -18,11 +20,31 @@ public class ProductDAOJDBCImpl implements ProductDAO {
     }
 
     @Override
-    public void listAll(Connection connection) {
-        try (Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery(QUERY_GET_ALL_PRODUCTS)) {
-            showProduct(rs);
+    public void listAll(int choice, Connection connection) {
+        Statement stmt = null;
+        ResultSet rs = null;
+        try {
+            if (choice==1){
+                stmt = connection.createStatement(); rs = stmt.executeQuery(QUERY_GET_ALL_SMARTPHONES);
+                showProduct(rs);
+            }else if (choice==2){
+                stmt = connection.createStatement(); rs = stmt.executeQuery(QUERY_GET_ALL_AUDIO);
+                showProduct(rs);
+            }else{
+                stmt = connection.createStatement(); rs = stmt.executeQuery(QUERY_GET_ALL_PRODUCTS);
+                showProduct(rs);
+            }
+
         } catch (SQLException e) {
             e.printStackTrace();
+        }finally {
+            if (stmt!=null){
+                try {
+                    stmt.close();
+                } catch (SQLException e) {
+                    e.printStackTrace();
+                }
+            }
         }
     }
 
@@ -53,13 +75,18 @@ public class ProductDAOJDBCImpl implements ProductDAO {
 
     }
 
-    private void showProduct(ResultSet rs) throws SQLException {
+    private void showProduct(int choice, ResultSet rs) throws SQLException {
         while (rs.next()) {
+            if (choice==1){
+                String name = rs.getString("name");
+                String brand = rs.getString("brand");
+                float price = rs.getFloat("price");
+                int stock = rs.getInt("stock");
+                String os = rs.getString("os");
+                int internalStorage = rs.getInt("internal_storage");
+            }
             int product_id = rs.getInt("product_id");
-            String name = rs.getString("name");
-            String brand = rs.getString("brand");
-            float price = rs.getFloat("price");
-            int stock = rs.getInt("stock");
+
 
             System.out.println(new Product(product_id, name, brand, price, stock) {
             });

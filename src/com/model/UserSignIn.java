@@ -2,12 +2,10 @@ package com.model;
 
 public class UserSignIn {
     private int userId;
-    private int profileId;
     private String username;
     private String password;
 
-    public UserSignIn(int profileId, String username, String password) {
-        this.profileId = profileId;
+    public UserSignIn(String username, String password) {
         this.username = username;
         this.password = password;
     }
@@ -18,14 +16,6 @@ public class UserSignIn {
 
     public void setUserId(int userId) {
         this.userId = userId;
-    }
-
-    public int getProfileId() {
-        return profileId;
-    }
-
-    public void setProfileId(int profileId) {
-        this.profileId = profileId;
     }
 
     public String getUsername() {

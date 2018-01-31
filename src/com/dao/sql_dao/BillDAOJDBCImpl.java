@@ -13,7 +13,7 @@ public class BillDAOJDBCImpl implements BillDAO {
 
 
     @Override
-    public void listAll(Connection connection) {
+    public void listAll(int choice, Connection connection) {
         try (Statement stmt = connection.createStatement(); ResultSet rs = stmt.executeQuery(QUERY_GET_ALL_BILLS)) {
             showBill(rs);
         } catch (SQLException e) {

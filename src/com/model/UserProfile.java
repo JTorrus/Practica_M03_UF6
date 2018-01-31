@@ -3,13 +3,13 @@ package com.model;
 public class UserProfile {
     private int profileId;
     private String city;
-    private String postalCode;
+    private String zipCode;
     private String email;
     private Double money;
 
-    public UserProfile(String city, String postalCode, String email, Double money) {
+    public UserProfile(String city, String zipCode, String email, Double money) {
         this.city = city;
-        this.postalCode = postalCode;
+        this.zipCode = zipCode;
         this.email = email;
         this.money = money;
     }
@@ -30,12 +30,12 @@ public class UserProfile {
         this.city = city;
     }
 
-    public String getPostalCode() {
-        return postalCode;
+    public String getZipCode() {
+        return zipCode;
     }
 
-    public void setPostalCode(String postalCode) {
-        this.postalCode = postalCode;
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 
     public String getEmail() {
