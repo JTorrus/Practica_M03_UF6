@@ -7,9 +7,9 @@ import java.sql.*;
 
 public class UserSigninDAOJDBCImpl implements UserSigninDAO {
 
-    private final String QUERY_GET_HIGER_ID = "SELECT max(profile_id) FROM userprofile";
     private final String QUERY_CHECK_WALLET = "SELECT funds FROM userprofile up WHERE up.profile_id = " +
             "(SELECT profile_id FROM usersignin_userprofile WHERE user_id = ?)";
+
 
 
 

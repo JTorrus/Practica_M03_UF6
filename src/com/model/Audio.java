@@ -1,13 +1,13 @@
 package com.model;
 
-public class Audio extends Product{
+public class Audio extends Product {
     private String type;
-    private int soundMode;
+    private String soundMode;
     private boolean wireless;
     private boolean microphone;
 
 
-    public Audio(int audioId, String name, String brand, float price, int stock, String type, int soundMode, boolean wireless, boolean microphone) {
+    public Audio(int audioId, String name, String brand, float price, int stock, String type, String soundMode, boolean wireless, boolean microphone) {
         super(audioId, name, brand, price, stock);
         this.type = type;
         this.soundMode = soundMode;
@@ -23,11 +23,11 @@ public class Audio extends Product{
         this.type = type;
     }
 
-    public int getSoundMode() {
+    public String getSoundMode() {
         return soundMode;
     }
 
-    public void setSoundMode(int soundMode) {
+    public void setSoundMode(String soundMode) {
         this.soundMode = soundMode;
     }
 
@@ -45,5 +45,24 @@ public class Audio extends Product{
 
     public void setMicrophone(boolean microphone) {
         this.microphone = microphone;
+    }
+
+    @Override
+    public String toString() {
+        String isWireless;
+        String hasMicro;
+
+        if (wireless){
+            isWireless = "yes";
+        }else{
+            isWireless = "no";
+        }
+        if (microphone){
+            hasMicro = "yes";
+        }else{
+            hasMicro = "no";
+        }
+
+        return super.toString() + " Type: " + type + ", Sound Mode: " + soundMode + ", Wireless: " + isWireless + ", Microphone: " + hasMicro;
     }
 }

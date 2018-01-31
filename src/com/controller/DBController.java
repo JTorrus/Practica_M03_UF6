@@ -18,7 +18,7 @@ public class DBController {
     //Method that allow us to create users
     public void registerUer(UserSignIn userSignIn, UserProfile userProfile, Connection connection) throws SQLException {
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement(INSERT_ADD_USERDATA); PreparedStatement preparedStatement2 = connection.prepareStatement(INSERT_ADD_USERPROFILE); PreparedStatement preparedStatement3 = connection.prepareStatement(CREATE_IDS_RELATION)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(INSERT_ADD_USERDATA); PreparedStatement preparedStatement2 = connection.prepareStatement(INSERT_ADD_USERPROFILE)) {
 
             connection.setAutoCommit(false);
 
@@ -33,14 +33,6 @@ public class DBController {
 
             preparedStatement2.executeUpdate();
             preparedStatement.executeUpdate();
-
-
-            ArrayList<Integer> ids = getUserIds(userSignIn, userProfile, connection);
-
-            preparedStatement3.setInt(1, ids.get(0));
-            preparedStatement3.setInt(2, ids.get(1));
-
-            preparedStatement3.executeUpdate();
 
             connection.commit();
 

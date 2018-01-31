@@ -45,4 +45,15 @@ public class Smartphone extends Product {
     public void setUnlocked(boolean unlocked) {
         this.unlocked = unlocked;
     }
+
+    @Override
+    public String toString() {
+        String isUnlocked;
+        if (unlocked){
+            isUnlocked = "yes";
+        }else{
+            isUnlocked = "no";
+        }
+        return super.toString() + " OS: " + os + ", Internal Storage: " + internalStorage + ", Color: " + color + ", Unlocked: " + isUnlocked;
+    }
 }

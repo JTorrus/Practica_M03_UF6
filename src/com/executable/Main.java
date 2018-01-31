@@ -1,6 +1,7 @@
 package com.executable;
 
 import com.controller.DBController;
+import com.dao.sql_dao.ProductDAOJDBCImpl;
 import com.jdbc_utilities.DBConnection;
 import com.model.UserSignIn;
 import com.model.UserProfile;
@@ -17,7 +18,7 @@ public class Main {
     }
 
     //Customer Menu
-    private static void showCustomerMenu() {
+    private static void showCustomerMenu() throws SQLException {
         Scanner sc = new Scanner(System.in);
         char choice;
 
@@ -33,6 +34,12 @@ public class Main {
         do {
             System.out.println("Choose an option: ");
             choice = sc.nextLine().charAt(0);
+            switch (choice){
+                case 'b' : {
+                    listProductsMenu();
+                    break;
+                }
+            }
         } while (choice != 'q' || choice != 'Q');
     }
 
@@ -56,14 +63,16 @@ public class Main {
     }
 
     //List Products Menu
-    private static void listProductsMenu(){
+    private static void listProductsMenu() throws SQLException {
         Scanner sc = new Scanner(System.in);
         int choice;
         System.out.println("Please select one choice");
         System.out.println("1. List Smartphones");
         System.out.println("2. List Earphones/Headphones");
-        System.out.println("3. List All");
+//        System.out.println("3. List All");
         choice = sc.nextInt();
+        ProductDAOJDBCImpl productDAOJDBC = new ProductDAOJDBCImpl();
+        productDAOJDBC.listAll(choice,DBConnection.getInstance());
     }
 
 
