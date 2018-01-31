@@ -1,15 +1,16 @@
 package com.model;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 public class ProductOrder {
     private int orderId;
     private int userId;
     private int productId;
-    private Date orderDate;
+    private Timestamp orderDate;
     private Double finalPrice;
 
-    public ProductOrder(int orderId, int userId, int productId, Date orderDate, Double finalPrice) {
+    public ProductOrder(int orderId, int userId, int productId, Timestamp orderDate, Double finalPrice) {
         this.orderId = orderId;
         this.userId = userId;
         this.productId = productId;
@@ -17,7 +18,7 @@ public class ProductOrder {
         this.finalPrice = finalPrice;
     }
 
-    public Date getOrderDate() {
+    public Timestamp getOrderDate() {
         return orderDate;
     }
 

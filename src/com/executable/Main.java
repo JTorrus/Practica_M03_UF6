@@ -137,6 +137,5 @@ public class Main {
         } else {
             System.out.println("The passwords that you've entered doesn't match");
         }
-
     }
 }

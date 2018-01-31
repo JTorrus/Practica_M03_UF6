@@ -64,12 +64,12 @@ public class ProductDAOJDBCImpl implements ProductDAO {
 
     @Override
     public void remove(int id, Connection connection) {
-        try (PreparedStatement preparedStatement = connection.prepareStatement(REMOVE_PRODUCT)) {
-            preparedStatement.setInt(1, id);
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println("Database error");
-        }
+    /*try (PreparedStatement preparedStatement = connection.prepareStatement()) {
+        preparedStatement.setInt(1, id);
+        preparedStatement.executeUpdate();
+    } catch (SQLException e) {
+        System.out.println("Database error");
+    }*/
     }
 
     @Override
