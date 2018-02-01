@@ -229,7 +229,7 @@ public class Main {
         System.out.println("Funds added successfully to your account!!!");
     }
 
-    private static boolean searchProduct() throws SQLException {
+    private static void searchProduct() throws SQLException {
         ProductDAOJDBCImpl productDAOJDBC = new ProductDAOJDBCImpl();
         String productName;
 
@@ -239,10 +239,8 @@ public class Main {
         if (productDAOJDBC.getOne(productName,DBConnection.getInstance())!=null){
             Product product = productDAOJDBC.getOne(productName,DBConnection.getInstance());
             System.out.println(product);
-            return true;
         }else{
             System.out.println("Sorry we don't have this product");
-            return false;
         }
 
     }
