@@ -9,19 +9,17 @@ import java.sql.*;
 
 public class ProductDAOJDBCImpl implements ProductDAO {
 
-    private final String UPDATE_BUY_PRODUCT = "UPDATE product SET stock = stock - ? WHERE product_name = ?";
+    private final String UPDATE_BUY_PRODUCT = "UPDATE product SET stock = stock - ? WHERE name = ?";
     private final String QUERY_GET_ALL_PRODUCTS = "SELECT * FROM product, smartphone, audio where product_id = smartphone_id OR product_id = audio_id";
     private final String QUERY_GET_ALL_SMARTPHONES = "SELECT p.product_id, p.name, p.brand, s.os, s.internal_storage, s.color, s.is_unlocked, p.price, p.stock FROM product AS p, smartphone AS s WHERE s.smartphone_id = p.product_id";
     private final String QUERY_GET_ALL_AUDIO = "SELECT p.product_id, p.name, p.brand, a.type, a.sound_mode, a.is_wireless, a.has_microphone, p.price, p.stock FROM product AS p, audio AS a WHERE a.audio_id = p.product_id";
-    private final String QUERY_GET_ONE_PRODUCT = "SELECT * FROM product WHERE product_id = ?";
-
-
+    private final String QUERY_GET_ONE_PRODUCT = "SELECT * FROM product WHERE name = ?";
 
 
     @Override
     public void listAll(int choice, Connection connection) {
         Statement stmt = null;
-        ResultSet rs = null;
+        ResultSet rs;
         try {
             if (choice == 1) {
                 stmt = connection.createStatement();
@@ -51,15 +49,20 @@ public class ProductDAOJDBCImpl implements ProductDAO {
     }
 
     @Override
-    public void showOne(int id, Connection connection) {
+    public Product getOne(String name, Connection connection) {
+        Product p1 = null;
+        System.out.println(name);
         try {
             PreparedStatement ps = connection.prepareStatement(QUERY_GET_ONE_PRODUCT);
-            ps.setInt(1, id);
+            ps.setString(1, name);
             ResultSet rs = ps.executeQuery();
-            showProduct(3, rs);
+            while (rs.next()) {
+                p1 = new Product(rs.getInt("product_id"), rs.getString("name"), rs.getString("brand"), rs.getFloat("price"), rs.getInt("stock"));
+            }
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return p1;
     }
 
     @Override
@@ -81,8 +84,7 @@ public class ProductDAOJDBCImpl implements ProductDAO {
                 boolean isUnlocked = rs.getBoolean("is_unlocked");
 
                 System.out.println(new Smartphone(product_id, name, brand, price, stock, os, internalStorage, color, isUnlocked));
-            }
-            else if (choice == 2) {
+            } else if (choice == 2) {
                 String name = rs.getString("name");
                 int product_id = rs.getInt("product_id");
                 String brand = rs.getString("brand");
@@ -104,23 +106,23 @@ public class ProductDAOJDBCImpl implements ProductDAO {
         try {
             connection.setAutoCommit(false);
             preparedStatement = connection.prepareStatement(UPDATE_BUY_PRODUCT);
-            preparedStatement.setInt(1,qty);
-            preparedStatement.setString(1,name);
+            preparedStatement.setInt(1, qty);
+            preparedStatement.setString(2, name);
             preparedStatement.executeUpdate();
             connection.commit();
         } catch (SQLException e) {
-            System.out.println("Database Error::"+e.getMessage());
+            System.out.println("Database Error::" + e.getMessage());
             try {
                 connection.rollback();
             } catch (SQLException e1) {
-                System.out.println("Database Error::"+e.getMessage());
+                System.out.println("Database Error::" + e.getMessage());
             }
-        }finally{
-            if (preparedStatement!=null){
+        } finally {
+            if (preparedStatement != null) {
                 try {
                     preparedStatement.close();
                 } catch (SQLException e) {
-                    System.out.println("Database Error::"+e.getMessage());
+                    System.out.println("Database Error::" + e.getMessage());
                 }
             }
         }

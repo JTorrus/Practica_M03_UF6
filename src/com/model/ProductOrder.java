@@ -10,12 +10,11 @@ public class ProductOrder {
     private Timestamp orderDate;
     private float finalPrice;
 
-    public ProductOrder(int orderId, int userId, int productId, Timestamp orderDate, float finalPrice) {
-        this.orderId = orderId;
+    public ProductOrder(int userId, int productId, float finalPrice) {
         this.userId = userId;
         this.productId = productId;
-        this.orderDate = orderDate;
         this.finalPrice = finalPrice;
+        this.orderDate = new Timestamp(System.currentTimeMillis());
     }
 
     public Timestamp getOrderDate() {
