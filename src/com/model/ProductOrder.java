@@ -8,9 +8,9 @@ public class ProductOrder {
     private int userId;
     private int productId;
     private Timestamp orderDate;
-    private Double finalPrice;
+    private float finalPrice;
 
-    public ProductOrder(int orderId, int userId, int productId, Timestamp orderDate, Double finalPrice) {
+    public ProductOrder(int orderId, int userId, int productId, Timestamp orderDate, float finalPrice) {
         this.orderId = orderId;
         this.userId = userId;
         this.productId = productId;
@@ -22,7 +22,7 @@ public class ProductOrder {
         return orderDate;
     }
 
-    public Double getFinalPrice() {
+    public float getFinalPrice() {
         return finalPrice;
     }
 

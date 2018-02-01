@@ -2,6 +2,7 @@ package com.executable;
 
 import com.controller.DBController;
 import com.dao.sql_dao.ProductDAOJDBCImpl;
+import com.dao.sql_dao.UserSigninDAOJDBCImpl;
 import com.jdbc_utilities.DBConnection;
 import com.model.UserSignIn;
 import com.model.UserProfile;
@@ -12,6 +13,7 @@ import java.util.Scanner;
 public class Main {
 
     private static DBController controller = new DBController();
+    private static UserSignIn currentUser;
 
     public static void main(String[] args) {
         showWelcomeMenu();
@@ -37,6 +39,10 @@ public class Main {
             switch (choice){
                 case 'b' : {
                     listProductsMenu();
+                    break;
+                }
+                case 'e':{
+                    showMyWallet();
                     break;
                 }
             }
@@ -92,6 +98,7 @@ public class Main {
         try {
             if (controller.checkUser(userSignIn, DBConnection.getInstance())) {
                 System.out.println("Welcome " + username);
+                currentUser = userSignIn;
                 showCustomerMenu();
             }else{
                 System.out.println("Wrong usernmae or password");
@@ -107,7 +114,7 @@ public class Main {
     private static void showSignUpMenu() {
         Scanner sc = new Scanner(System.in);
         String password, username, rPassword, city, zipCode, email;
-        Double money = 100.0;
+        float money = 100.0f;
 
         System.out.print("Enter your Username: ");
         username = sc.nextLine();
@@ -126,7 +133,7 @@ public class Main {
             UserProfile userProfile = new UserProfile(city, zipCode, email, money);
             UserSignIn userSignIn = new UserSignIn(username, password);
             try {
-                controller.registerUer(userSignIn, userProfile, DBConnection.getInstance());
+                controller.registerUser(userSignIn, userProfile, DBConnection.getInstance());
                 System.out.println("User created successfully!!");
             } catch (SQLException e) {
                 System.out.println("Database Error::" + e.getMessage());
@@ -137,5 +144,23 @@ public class Main {
         } else {
             System.out.println("The passwords that you've entered doesn't match");
         }
+    }
+
+    private static void showBuyMenu(){
+        Scanner sc = new Scanner(System.in);
+        int qty;
+        Double finalPrice;
+        String productName;
+
+        System.out.print("Enter product's name: ");
+        productName = sc.nextLine();
+        System.out.print("How much "+ productName+" you want to buy?: ");
+        qty = sc.nextInt();
+
+    }
+
+    private static void showMyWallet() throws SQLException {
+        UserSigninDAOJDBCImpl userSigninDAOJDBC = new UserSigninDAOJDBCImpl();
+        System.out.println(userSigninDAOJDBC.checkMyWallet(currentUser,DBConnection.getInstance()));
     }
 }

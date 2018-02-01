@@ -33,17 +33,6 @@ public class OrderDAOJDBCImpl implements OrderDAO {
         }
     }
 
-
-    @Override
-    public void remove(int id, Connection connection) {
-        try (PreparedStatement preparedStatement = connection.prepareStatement(DELETE_REMOVE_ORDER)) {
-            preparedStatement.setInt(1, id);
-            preparedStatement.executeUpdate();
-        } catch (SQLException e) {
-            System.out.println("Database error");
-        }
-    }
-
     @Override
     public void add(ProductOrder productOrder, Connection connection) {
 
@@ -56,7 +45,7 @@ public class OrderDAOJDBCImpl implements OrderDAO {
             int productId = rs.getInt("product_id");
             Timestamp orderDate = rs.getTimestamp("order_date");
             Date bill_date = rs.getDate("bill_date");
-            double final_price = rs.getDouble("final_price");
+            float final_price = rs.getFloat("final_price");
 
             System.out.println(new ProductOrder(orderId, userId, productId, orderDate, final_price));
         }
