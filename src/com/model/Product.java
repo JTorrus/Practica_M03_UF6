@@ -2,17 +2,61 @@ package com.model;
 
 public class Product {
     private int productId;
-    private String productName;
-    private String tag;
+    private String name;
+    private String brand;
     private float price;
     private int stock;
 
-    public Product(String productName, String tag, float price, int stock) {
-        this.productName = productName;
-        this.tag = tag;
+    public Product(int productId, String name, String brand, float price, int stock) {
+        this.productId = productId;
+        this.name = name;
+        this.brand = brand;
         this.price = price;
         this.stock = stock;
     }
 
+    public int getProductId() {
+        return productId;
+    }
 
+    public void setProductId(int productId) {
+        this.productId = productId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+
+    public void setPrice(float price) {
+        this.price = price;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
+
+    @Override
+    public String toString() {
+        return "Name: " + name + ", Brand: " + brand + ", Price: " + price + "€, Stock: " + stock+",";
+    }
 }
