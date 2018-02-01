@@ -164,13 +164,12 @@ public class Main {
             try {
                 if (controller.registerUser(userSignIn, userProfile, DBConnection.getInstance())){
                     System.out.println("User created successfully!!");
+                    showWelcomeMenu();
                 }
             } catch (SQLException e) {
                 System.out.println("Database Error::" + e.getMessage());
+                DBConnection.disconnect();
             }
-
-            DBConnection.disconnect();
-
         } else {
             System.out.println("The passwords that you've entered doesn't match");
         }
